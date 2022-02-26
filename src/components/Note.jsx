@@ -4,7 +4,7 @@ import React from "react";
 //<h1> for a title and a <p> for the content.
 function Note() {
   return (
-    <div>
+    <div className="note">
       <h1>
         Dummy Note
       </h1>
