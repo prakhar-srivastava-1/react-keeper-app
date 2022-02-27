@@ -13,7 +13,7 @@ function App() {
     <div>
       <Header />
       {/*Fetch notes using an Arrow function*/}
-      {<Note />}
+      {notes.map(note => <Note />)}
 
       <Footer />
     </div>
