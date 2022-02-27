@@ -2,14 +2,14 @@ import React from "react";
 
 //5. Create a Note.jsx component to show a <div> element with a
 //<h1> for a title and a <p> for the content.
-function Note() {
+function Note(props) {
   return (
     <div className="note">
       <h1>
-        Dummy Note
+        {props.title}
       </h1>
       <p>
-        This is a dummy note! We will try to reuse this component for other notes.
+        {props.content}
       </p>
     </div>
   );
