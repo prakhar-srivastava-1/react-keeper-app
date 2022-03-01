@@ -6,7 +6,7 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [notes, setAllNotes] = React.useState([{id:1, title:"Note title", content:"Note content"}]);
+  const [notes, setAllNotes] = React.useState([{title:"Note title", content:"Note content"}]);
 
   function createNote(note) {
     const newNoteArray = [...notes, note];
@@ -18,7 +18,7 @@ function App() {
       <Header />
       <CreateArea createNote={createNote}/>
       {/*Render all notes*/}
-      {notes.map(note => <Note key={note.id} title={note.title} content={note.content} />)}
+      {notes.map((note, index) => <Note key={index} title={index} content={note.content} />)}
       <Footer />
     </div>
   );
