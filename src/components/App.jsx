@@ -8,6 +8,11 @@ function App() {
 
   const [notes, setAllNotes] = React.useState([{id:1, title:"Note title", content:"Note content"}]);
 
+  function createNote(note) {
+    const newNoteArray = [...notes, note];
+    setAllNotes(newNoteArray);
+  }
+
   return (
     <div>
       <Header />
