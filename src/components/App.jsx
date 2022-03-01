@@ -8,15 +8,16 @@ function App() {
 
   const [notes, setAllNotes] = React.useState([{title:"Note title", content:"Note content"}]);
 
-  function createNote(note) {
-    const newNoteArray = [...notes, note];
+  function createNote(newNote) {
+    const newNoteArray = [...notes, newNote];
+    console.log(newNoteArray);
     setAllNotes(newNoteArray);
   }
 
   return (
     <div>
       <Header />
-      <CreateArea createNote={createNote}/>
+      <CreateArea createNewNote={createNote}/>
       {/*Render all notes*/}
       {notes.map((note, index) => <Note key={index} id={index} title={note.title} content={note.content} />)}
       <Footer />
