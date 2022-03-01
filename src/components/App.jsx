@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Header />
-      <CreateArea />
+      <CreateArea createNote={createNote}/>
       {/*Render all notes*/}
       {notes.map(note => <Note key={note.id} title={note.title} content={note.content} />)}
       <Footer />
