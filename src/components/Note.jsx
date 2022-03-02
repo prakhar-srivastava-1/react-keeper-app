@@ -19,7 +19,7 @@ function Note(props) {
       </p>
       <button onClick={
         () => handleClick(props.id)
-      }>DEL</button>
+      }>🗑️</button>
     </div>
   );
 }
