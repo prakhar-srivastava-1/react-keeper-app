@@ -14,12 +14,17 @@ function App() {
     setAllNotes(newNoteArray);
   }
 
+  function removeNote(noteId) {
+    const newNoteArray = notes.filter((value, index) => index !== noteId);
+    setAllNotes(newNoteArray);
+  }
+
   return (
     <div>
       <Header />
       <CreateArea createNewNote={createNote}/>
       {/*Render all notes*/}
-      {notes.map((note, index) => <Note key={index} id={index} title={note.title} content={note.content} />)}
+      {notes.map((note, index) => <Note deleteNote={removeNote} key={index} id={index} title={note.title} content={note.content} />)}
       <Footer />
     </div>
   );
