@@ -6,7 +6,7 @@ import CreateArea from "./CreateArea";
 
 function App() {
 
-  const [notes, setAllNotes] = React.useState([{title:"Note title", content:"Note content"}]);
+  const [notes, setAllNotes] = React.useState([]);
 
   function createNote(newNote) {
     const newNoteArray = [...notes, newNote];
