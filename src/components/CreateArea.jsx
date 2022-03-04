@@ -18,19 +18,27 @@ function CreateArea(props) {
 
   }
 
+  // Polish the app - expand inputs only on focus
+  // state: rows, showTitle
+  const [rows, setRows] = React.useState(1);
+  function handleTitleFocus() {
+    setRows(3)
+  }
+
   return (
     <div>
       <form onSubmit={event => event.preventDefault()} className="create-note">
-        <input onChange={captureNote} name="title" placeholder="Title" value={title} />
-        <textarea onChange={captureNote} name="content" placeholder="Take a note..." rows="3" value={content} />
-        <Zoom in={true}>
+        {rows == 3 && <input onChange={captureNote} name="title" placeholder="Title" value={title} />}
+        <textarea onClick={handleTitleFocus} onChange={captureNote} name="content" placeholder="Take a note..." rows={rows} value={content} />
+        {rows == 3 &&
+          <Zoom in={true}>
           <Fab onClick={(event) => {
             props.createNewNote({title, content}, event);
             setNote({title: "", content: ""});
           }}>
             <Add />
           </Fab>
-        </Zoom>
+        </Zoom>}
       </form>
     </div>
   );
