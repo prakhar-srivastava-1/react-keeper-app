@@ -1,4 +1,5 @@
 import React from "react";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 //5. Create a Note.jsx component to show a <div> element with a
 //<h1> for a title and a <p> for the content.
@@ -14,7 +15,7 @@ function Note(props) {
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       <button onClick={ () => handleClick(props.id) }>
-        <span role="img" aria-label="delete">🗑️</span>
+        <DeleteIcon />
       </button>
     </div>
   );

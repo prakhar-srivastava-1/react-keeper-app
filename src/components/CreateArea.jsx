@@ -1,4 +1,5 @@
 import React from "react";
+import Add from '@material-ui/icons/Add';
 
 function CreateArea(props) {
 
@@ -17,14 +18,14 @@ function CreateArea(props) {
 
   return (
     <div>
-      <form onSubmit={event => event.preventDefault()}>
+      <form onSubmit={event => event.preventDefault()} className="create-note">
         <input onChange={captureNote} name="title" placeholder="Title" value={title} />
         <textarea onChange={captureNote} name="content" placeholder="Take a note..." rows="3" value={content} />
         <button onClick={(event) => {
           props.createNewNote({title, content}, event);
           setNote({title: "", content: ""});
         }}>
-          Add
+          <Add />
         </button>
       </form>
     </div>
